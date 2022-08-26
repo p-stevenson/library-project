@@ -3,7 +3,18 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+.wrapper {
+  border: none;
+}
+
+.card {
+  border-color: chartreuse;
+}
+
 .cardContainer {
+  border-color: pink;
   display: grid;
   height: 100vh;
   gap: 1rem;
