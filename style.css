@@ -13,6 +13,20 @@ body,
   border-color: chartreuse;
 }
 
+.formContainer {
+  border-color: orangered;
+  display: none;
+  float: inherit;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  background-color: white;
+  position: absolute;
+}
+
 .cardContainer {
   border-color: pink;
   display: grid;
