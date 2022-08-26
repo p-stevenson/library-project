@@ -10,6 +10,45 @@
   </head>
   <body>
     <div class="wrapper">
+      <header>
+        <div class="nav">
+          <button id="add">ADD</button>
+        </div>
+      </header>
+      <div class="formContainer">
+        <form name="New Book Information" action="#" method="post">
+          <label for="bookTitle"
+            >Title
+            <input
+              type="text"
+              name="bookTitle"
+              id="bookTitle"
+              pattern="[a-zA-Z]{1,}"
+              title="Book Title...(required)"
+              required
+          /></label>
+
+          <label for="author"
+            >Author
+            <input
+              type="text"
+              name="author"
+              id="author"
+              pattern="[a-zA-Z]{1,}"
+              title="Author"
+          /></label>
+
+          <label for="numOfPages"
+            >Number of Pages
+            <input
+              type="number"
+              inputmode="number"
+              name="numOfPages"
+              id="numOfPages"
+              pattern="\d"
+          /></label>
+        </form>
+      </div>
       <div class="cardContainer"></div>
     </div>
   </body>
