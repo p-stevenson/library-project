@@ -95,4 +95,10 @@ function displayBooks(library) {
   }
 }
 
+document.querySelector("#add").addEventListener("click", () => {
+  const showForm = document.querySelector(".formContainer");
+  showForm.style.display = "flex";
+}),
+  { once: true };
+
 displayBooks(myLibrary);
