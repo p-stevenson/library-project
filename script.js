@@ -80,13 +80,14 @@ function displayBooks(library) {
   const cardContainer = document.querySelector(".cardContainer");
   for (let i = 0; i < library.length; i++) {
     const card = document.createElement("div");
-    card.classList.add(`card`);
+    card.classList.add("card");
+    card.setAttribute("data-id", `card000${i}`);
     cardContainer.appendChild(card);
-    card.setAttribute("id", `card${i}`);
-    const currentBook = document.querySelector(`#card${i}`);
+    const currentBook = document.querySelector(`[data-id=card000${i}]`);
     for (let key in library[i]) {
       const info = document.createElement("p");
-      card.classList.add("info");
+      info.classList.add("info");
+      info.setAttribute("id", `${key}`);
       currentBook.appendChild(info);
       info.textContent = library[i][key];
       console.log(library[i][key]);
