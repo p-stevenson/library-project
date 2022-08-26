@@ -1,0 +1,10 @@
+* {
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+
+.cardContainer {
+  display: grid;
+  height: 100vh;
+  gap: 1rem;
+}
