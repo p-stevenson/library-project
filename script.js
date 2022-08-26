@@ -76,6 +76,22 @@ function addBookToLibrary(book) {
   );
 }
 
-function displayBooks() {}
+function displayBooks(library) {
+  const cardContainer = document.querySelector(".cardContainer");
+  for (let i = 0; i < library.length; i++) {
+    const card = document.createElement("div");
+    card.classList.add(`card`);
+    cardContainer.appendChild(card);
+    card.setAttribute("id", `card${i}`);
+    const currentBook = document.querySelector(`#card${i}`);
+    for (let key in library[i]) {
+      const info = document.createElement("p");
+      card.classList.add("info");
+      currentBook.appendChild(info);
+      info.textContent = library[i][key];
+      console.log(library[i][key]);
+    }
+  }
+}
 
-console.log("test");
+displayBooks(myLibrary);
