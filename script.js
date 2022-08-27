@@ -95,10 +95,15 @@ function displayBooks(library) {
   }
 }
 
-document.querySelector("#add").addEventListener("click", () => {
+const addBtn = document.querySelector("#add");
+
+const formVisibility = () => {
   const showForm = document.querySelector(".formContainer");
   showForm.style.display = "flex";
-}),
-  { once: true };
+  console.log("active");
+  addBtn.removeEventListener("click", formVisibility);
+};
+
+addBtn.addEventListener("click", formVisibility), { once: true };
 
 displayBooks(myLibrary);
