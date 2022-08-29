@@ -79,22 +79,30 @@ const addBtn = document.querySelector("#addBook");
 const formContainer = document.querySelector(".formContainer");
 const displayForm = () => {
   formContainer.style.display = "flex";
-  console.log("active");
   listenForSubmit();
 };
 
 const cancelBtn = document.querySelector("#cancel");
 const cancelInput = () => {
-  formContainer.style.display = "none";
   listenForAddBtn();
+  formContainer.style.display = "none";
 };
 
 const submitBtn = document.querySelector("#submit");
 const submitBook = () => {
   addBookToLibrary();
-  formContainer.style.display = "none";
   listenForAddBtn();
+  clearLibrary();
+  displayBooks(myLibrary);
+  formContainer.style.display = "none";
 };
+
+function clearLibrary(cards) {
+  cards = document.querySelectorAll(".card");
+  cards.forEach((card) => {
+    card.remove();
+  });
+}
 
 listenForAddBtn();
 
