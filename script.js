@@ -28,10 +28,11 @@ let myLibrary = [
 ];
 
 class Book {
-  constructor(title, author, pages, hasRead) {
+  constructor(title, author, pages, notes, hasRead) {
     this.title = title;
     this.author = author;
     this.pages = pages;
+    this.notes = notes;
     this.hasRead = hasRead;
   }
 }
@@ -40,8 +41,9 @@ function addBookToLibrary(book) {
   const title = document.querySelector("#bookTitle").value;
   const author = document.querySelector("#author").value;
   const pages = document.querySelector("#numOfPages").value;
+  const notes = document.querySelector("#notes").value;
   return myLibrary.push(
-    (book = new Book(`${title}`, `${author}`, `${pages}`, true))
+    (book = new Book(`${title}`, `${author}`, `${pages}`, `${notes}`, true))
   );
 }
 
@@ -63,6 +65,9 @@ function displayBooks(library) {
   }
 }
 
+const addBtn = document.querySelector("#addBook");
+const formContainer = document.querySelector(".formContainer");
+
 function listenForAddBtn() {
   addBtn.addEventListener("click", displayForm), { once: true };
   cancelBtn.removeEventListener("click", cancelInput);
@@ -75,8 +80,6 @@ function listenForSubmit() {
   submitBtn.addEventListener("click", submitBook), { once: true };
 }
 
-const addBtn = document.querySelector("#addBook");
-const formContainer = document.querySelector(".formContainer");
 const displayForm = () => {
   formContainer.style.display = "flex";
   listenForSubmit();
