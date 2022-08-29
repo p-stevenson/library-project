@@ -92,17 +92,13 @@ const submitBtn = document.querySelector("#submit");
 const submitBook = () => {
   addBookToLibrary();
   listenForAddBtn();
-  clearLibrary();
-  displayBooks(myLibrary);
-  formContainer.style.display = "none";
-};
-
-function clearLibrary(cards) {
-  cards = document.querySelectorAll(".card");
-  cards.forEach((card) => {
+  const clearLibrary = document.querySelectorAll(".card").forEach((card) => {
     card.remove();
   });
-}
+  displayBooks(myLibrary);
+  formContainer.style.display = "none";
+  const resetForm = document.querySelector("form").reset();
+};
 
 listenForAddBtn();
 
