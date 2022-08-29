@@ -40,7 +40,7 @@ class Book {
 function addBookToLibrary(book) {
   const title = document.querySelector("#bookTitle").value;
   const author = document.querySelector("#author").value;
-  const pages = document.querySelector("#numOfPages").value;
+  const pages = Number(document.querySelector("#numOfPages").value);
   const notes = document.querySelector("#notes").value;
   return myLibrary.push(
     (book = new Book(`${title}`, `${author}`, `${pages}`, `${notes}`, true))
