@@ -6,38 +6,7 @@ let myLibrary = [
     pages: 295,
     hasRead: true,
   },
-  {
-    title: "Sapiens: A Brief History of Humankind",
-    author: "Yuval Noah Harari",
-    pages: 512,
-    hasRead: false,
-  },
   { title: "1984", author: "George Orwell", pages: 250, hasRead: true },
-  {
-    title: "To Kill a Mockingbird",
-    author: "Harper Lee",
-    pages: 336,
-    hasRead: false,
-  },
-  {
-    title: "The Great Gatsby",
-    author: "F.Scott Fitzgerald",
-    pages: 180,
-    hasRead: true,
-  },
-  {
-    title: "Pride and Prejudice",
-    author: "Jane Austen",
-    pages: 279,
-    hasRead: false,
-  },
-  { title: "Jane Eyre", author: "Charlotte Brontë", pages: 532, hasRead: true },
-  {
-    title: "The Picture of Dorian Grey",
-    author: "Oscar Wilde",
-    pages: 272,
-    hasRead: false,
-  },
   {
     title: "The Metamorphosis",
     author: "Franz Kafka",
@@ -68,9 +37,9 @@ class Book {
 }
 
 function addBookToLibrary(book) {
-  const title = prompt("title?");
-  const author = prompt("author");
-  const pages = prompt("Number of Pages?");
+  const title = document.querySelector("#bookTitle").value;
+  const author = document.querySelector("#author").value;
+  const pages = document.querySelector("#numOfPages").value;
   return myLibrary.push(
     (book = new Book(`${title}`, `${author}`, `${pages}`, true))
   );
@@ -90,20 +59,43 @@ function displayBooks(library) {
       info.setAttribute("id", `${key}`);
       currentBook.appendChild(info);
       info.textContent = library[i][key];
-      console.log(library[i][key]);
     }
   }
 }
 
-const addBtn = document.querySelector("#add");
+function listenForAddBtn() {
+  addBtn.addEventListener("click", displayForm), { once: true };
+  cancelBtn.removeEventListener("click", cancelInput);
+  submitBtn.removeEventListener("click", submitBook);
+}
 
-const formVisibility = () => {
-  const showForm = document.querySelector(".formContainer");
-  showForm.style.display = "flex";
+function listenForSubmit() {
+  addBtn.removeEventListener("click", displayForm);
+  cancelBtn.addEventListener("click", cancelInput), { once: true };
+  submitBtn.addEventListener("click", submitBook), { once: true };
+}
+
+const addBtn = document.querySelector("#addBook");
+const formContainer = document.querySelector(".formContainer");
+const displayForm = () => {
+  formContainer.style.display = "flex";
   console.log("active");
-  addBtn.removeEventListener("click", formVisibility);
+  listenForSubmit();
 };
 
-addBtn.addEventListener("click", formVisibility), { once: true };
+const cancelBtn = document.querySelector("#cancel");
+const cancelInput = () => {
+  formContainer.style.display = "none";
+  listenForAddBtn();
+};
+
+const submitBtn = document.querySelector("#submit");
+const submitBook = () => {
+  addBookToLibrary();
+  formContainer.style.display = "none";
+  listenForAddBtn();
+};
+
+listenForAddBtn();
 
 displayBooks(myLibrary);
