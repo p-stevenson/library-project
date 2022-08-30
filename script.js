@@ -1,60 +1,42 @@
 "use strict";
 let myLibrary = [
   {
-    title: "Thinking, Fast and Slow",
-    author: "Daniel Kahneman",
-    pages: 295,
-    hasRead: true,
-  },
-  { title: "1984", author: "George Orwell", pages: 250, hasRead: true },
-  {
-    title: "The Metamorphosis",
-    author: "Franz Kafka",
-    pages: 201,
-    hasRead: true,
-  },
-  {
-    title: "The Doors of Perception",
-    author: "Aldous Huxley",
-    pages: 208,
-    hasRead: false,
-  },
-  {
     title: "Crime and Punishment",
     author: "Fyodor Dostoyevsky",
     pages: 671,
-    hasRead: true,
+    notes: "What an absolute unit of a story",
+    hasRead: false,
+    uuid: crypto.randomUUID(),
   },
 ];
 
 class Book {
   constructor(title, author, pages, notes, hasRead) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.notes = notes;
-    this.hasRead = hasRead;
+    this.title = document.querySelector("#bookTitle").value;
+    this.author = document.querySelector("#author").value;
+    this.pages = Number(document.querySelector("#numOfPages").value);
+    this.notes = document.querySelector("#notes").value;
+    this.hasRead = Boolean(hasRead);
+    this.uuid = crypto.randomUUID();
   }
 }
 
-function addBookToLibrary(book) {
-  const title = document.querySelector("#bookTitle").value;
-  const author = document.querySelector("#author").value;
-  const pages = Number(document.querySelector("#numOfPages").value);
-  const notes = document.querySelector("#notes").value;
+function addToLibrary(book) {
   return myLibrary.push(
-    (book = new Book(`${title}`, `${author}`, `${pages}`, `${notes}`, true))
+    (book = new Book(title, author, pages, notes /* hasRead */))
   );
 }
 
 function displayBooks(library) {
-  const cardContainer = document.querySelector(".cardContainer");
+  let cardContainer = document.querySelector(".cardContainer");
+
   for (let i = 0; i < library.length; i++) {
-    const card = document.createElement("div");
+    let card = document.createElement("div");
     card.classList.add("card");
-    card.setAttribute("data-id", `card000${i}`);
+    card.setAttribute("data-id", `card0${i}`);
     cardContainer.appendChild(card);
-    const currentBook = document.querySelector(`[data-id=card000${i}]`);
+    const currentBook = document.querySelector(`[data-id=card0${i}]`);
+
     for (let key in library[i]) {
       const info = document.createElement("p");
       info.classList.add("info");
@@ -62,11 +44,20 @@ function displayBooks(library) {
       currentBook.appendChild(info);
       info.textContent = library[i][key];
     }
+    const hideReadStatus = document
+      .querySelectorAll("#hasRead")
+      .forEach((item) => {
+        item.style.display = "none";
+      });
+    const hideUUID = document.querySelectorAll("#uuid").forEach((item) => {
+      item.style.display = "none";
+    });
   }
 }
 
 const addBtn = document.querySelector("#addBook");
 const formContainer = document.querySelector(".formContainer");
+const submitBtn = document.querySelector("#submit");
 
 function listenForAddBtn() {
   addBtn.addEventListener("click", displayForm), { once: true };
@@ -91,16 +82,15 @@ const cancelInput = () => {
   formContainer.style.display = "none";
 };
 
-const submitBtn = document.querySelector("#submit");
 const submitBook = () => {
-  addBookToLibrary();
+  addToLibrary();
   listenForAddBtn();
   const clearLibrary = document.querySelectorAll(".card").forEach((card) => {
     card.remove();
   });
   displayBooks(myLibrary);
-  formContainer.style.display = "none";
   const resetForm = document.querySelector("form").reset();
+  formContainer.style.display = "none";
 };
 
 listenForAddBtn();
