@@ -4,8 +4,6 @@ let myLibrary = [
     title: "Crime and Punishment",
     author: "Fyodor Dostoyevsky",
     pages: 671,
-    notes: "What an absolute unit of a story",
-    hasRead: false,
     uuid: crypto.randomUUID(),
   },
 ];
@@ -15,8 +13,6 @@ class Book {
     this.title = document.querySelector("#bookTitle").value;
     this.author = document.querySelector("#author").value;
     this.pages = Number(document.querySelector("#numOfPages").value);
-    this.notes = document.querySelector("#notes").value;
-    this.hasRead = Boolean(hasRead);
     this.uuid = crypto.randomUUID();
   }
 }
@@ -44,11 +40,7 @@ function displayBooks(library) {
       currentBook.appendChild(info);
       info.textContent = library[i][key];
     }
-    const hideReadStatus = document
-      .querySelectorAll("#hasRead")
-      .forEach((item) => {
-        item.style.display = "none";
-      });
+
     const hideUUID = document.querySelectorAll("#uuid").forEach((item) => {
       item.style.display = "none";
     });
