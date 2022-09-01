@@ -9,18 +9,20 @@ let myLibrary = [
 ];
 
 class Book {
-  constructor(title, author, pages, notes, hasRead) {
-    this.title = document.querySelector("#bookTitle").value;
-    this.author = document.querySelector("#author").value;
-    this.pages = Number(document.querySelector("#numOfPages").value);
-    this.uuid = crypto.randomUUID();
+  constructor(title, author, pages, uuid) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.uuid = uuid;
   }
 }
 
 function addToLibrary(book) {
-  return myLibrary.push(
-    (book = new Book(title, author, pages, notes /* hasRead */))
-  );
+  const title = document.querySelector("#bookTitle").value;
+  const author = document.querySelector("#author").value;
+  const pages = Number(document.querySelector("#numOfPages").value);
+  const uuid = crypto.randomUUID();
+  return myLibrary.push((book = new Book(title, author, pages, uuid)));
 }
 
 function displayBooks(library) {
@@ -29,9 +31,9 @@ function displayBooks(library) {
   for (let i = 0; i < library.length; i++) {
     let card = document.createElement("div");
     card.classList.add("card");
-    card.setAttribute("data-id", `card0${i}`);
+    card.setAttribute("id", `card0${i}`);
     cardContainer.appendChild(card);
-    const currentBook = document.querySelector(`[data-id=card0${i}]`);
+    const currentBook = document.querySelector(`[id=card0${i}]`);
 
     for (let key in library[i]) {
       const info = document.createElement("p");
@@ -41,12 +43,30 @@ function displayBooks(library) {
       info.textContent = library[i][key];
     }
 
+    let delBtn = document.createElement("button");
+    delBtn.classList.add("delBtn");
+    delBtn.setAttribute("type", "button");
+    delBtn.setAttribute("id", `${myLibrary[i]["uuid"]}`);
+    delBtn.textContent = "Delete";
+    currentBook.appendChild(delBtn);
+
     const hideUUID = document.querySelectorAll("#uuid").forEach((item) => {
       item.style.display = "none";
     });
   }
+  const delBook = document.querySelectorAll(".delBtn").forEach((delBtn) =>
+    delBtn.addEventListener("click", () => {
+      const index = library.findIndex((book) => {
+        return book.uuid === `${delBtn["id"]}`;
+      });
+      myLibrary.splice(index, 1);
+      clearLibrary();
+      displayBooks(myLibrary);
+    })
+  );
 }
 
+// const delBtn = document.querySelector(".delBtn");
 const addBtn = document.querySelector("#addBook");
 const formContainer = document.querySelector(".formContainer");
 const submitBtn = document.querySelector("#submit");
@@ -63,6 +83,12 @@ function listenForSubmit() {
   submitBtn.addEventListener("click", submitBook), { once: true };
 }
 
+function clearLibrary() {
+  document.querySelectorAll(".card").forEach((card) => {
+    card.remove();
+  });
+}
+
 const displayForm = () => {
   formContainer.style.display = "flex";
   listenForSubmit();
@@ -77,14 +103,11 @@ const cancelInput = () => {
 const submitBook = () => {
   addToLibrary();
   listenForAddBtn();
-  const clearLibrary = document.querySelectorAll(".card").forEach((card) => {
-    card.remove();
-  });
+  clearLibrary();
   displayBooks(myLibrary);
   const resetForm = document.querySelector("form").reset();
   formContainer.style.display = "none";
 };
 
 listenForAddBtn();
-
 displayBooks(myLibrary);
