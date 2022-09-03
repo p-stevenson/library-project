@@ -8,10 +8,6 @@ let myLibrary = [
   },
 ];
 
-class BookCard {
-  constructor() {}
-}
-
 class Book {
   constructor(title, author, pages, uniqueID) {
     this.title = title;
@@ -19,6 +15,43 @@ class Book {
     this.pages = pages;
     this.uniqueID = uniqueID;
   }
+}
+
+function displayBooks(library) {
+  clearDisplayedBooks();
+  let cardContainer = document.querySelector(".cardContainer");
+
+  for (let i = 0; i < library.length; i++) {
+    let bookCard = document.createElement("div");
+    bookCard.classList.add("bookCard");
+    bookCard.setAttribute("id", `bookCard0${i}`);
+    cardContainer.appendChild(bookCard);
+
+    const currentBook = document.querySelector(`[id=bookCard0${i}]`);
+    for (let key in library[i]) {
+      if (key === "uniqueID") {
+        continue;
+      }
+      const bookInfo = document.createElement("p");
+      bookInfo.classList.add("info");
+      bookInfo.setAttribute("id", `${key}`);
+      currentBook.appendChild(bookInfo);
+      if (key === "pages") {
+        bookInfo.textContent = `Pages: ${library[i][key]}`;
+      } else {
+        bookInfo.textContent = library[i][key];
+      }
+    }
+
+    let delBtn = document.createElement("button");
+    delBtn.classList.add("delBtn");
+    delBtn.setAttribute("type", "button");
+    delBtn.setAttribute("id", `${myLibrary[i]["uniqueID"]}`);
+    delBtn.textContent = "Delete";
+    currentBook.appendChild(delBtn);
+  }
+  listenForAddBtn();
+  listenForDelBook();
 }
 
 function addToLibrary(book) {
@@ -29,58 +62,10 @@ function addToLibrary(book) {
   return myLibrary.push((book = new Book(title, author, pages, uniqueID)));
 }
 
-function displayBooks(library) {
-  let cardContainer = document.querySelector(".cardContainer");
-
-  for (let i = 0; i < library.length; i++) {
-    let card = document.createElement("div");
-    card.classList.add("card");
-    card.setAttribute("id", `card0${i}`);
-    cardContainer.appendChild(card);
-
-    const currentBook = document.querySelector(`[id=card0${i}]`);
-    for (let key in library[i]) {
-      if (key === "uniqueID") {
-        continue;
-      }
-      const info = document.createElement("p");
-      info.classList.add("info");
-      info.setAttribute("id", `${key}`);
-      currentBook.appendChild(info);
-      if (key === "pages") {
-        info.textContent = `Pages: ${library[i][key]}`;
-      } else {
-        info.textContent = library[i][key];
-      }
-    }
-
-    let delBtn = document.createElement("button");
-    delBtn.classList.add("delBtn");
-    delBtn.setAttribute("type", "button");
-    delBtn.setAttribute("id", `${myLibrary[i]["uniqueID"]}`);
-    delBtn.textContent = "Delete";
-    currentBook.appendChild(delBtn);
-
-    /*     const hideUUID = document.querySelectorAll("#uuid").forEach((item) => {
-      item.style.display = "none";
-    }); */
-  }
-  const delBook = document.querySelectorAll(".delBtn").forEach((delBtn) =>
-    delBtn.addEventListener("click", () => {
-      const index = library.findIndex((book) => {
-        return book.uniqueID === `${delBtn["id"]}`;
-      });
-      myLibrary.splice(index, 1);
-      clearLibrary();
-      displayBooks(myLibrary);
-    })
-  );
-}
-
-// const delBtn = document.querySelector(".delBtn");
 const addBtn = document.querySelector("#addBook");
 const formContainer = document.querySelector(".formContainer");
 const submitBtn = document.querySelector("#submit");
+const cancelBtn = document.querySelector("#cancel");
 
 function listenForAddBtn() {
   addBtn.addEventListener("click", displayForm), { once: true };
@@ -94,18 +79,29 @@ function listenForSubmit() {
   submitBtn.addEventListener("click", submitBook), { once: true };
 }
 
-function clearLibrary() {
-  document.querySelectorAll(".card").forEach((card) => {
-    card.remove();
+function listenForDelBook() {
+  document.querySelectorAll(".delBtn").forEach((delBtn) =>
+    delBtn.addEventListener("click", () => {
+      const index = myLibrary.findIndex((book) => {
+        return book.uniqueID === `${delBtn["id"]}`;
+      });
+      myLibrary.splice(index, 1);
+      displayBooks(myLibrary);
+    })
+  );
+}
+
+function clearDisplayedBooks() {
+  document.querySelectorAll(".bookCard").forEach((book) => {
+    book.remove();
   });
 }
 
-const displayForm = () => {
+function displayForm() {
   formContainer.style.display = "flex";
   listenForSubmit();
-};
+}
 
-const cancelBtn = document.querySelector("#cancel");
 const cancelInput = () => {
   listenForAddBtn();
   formContainer.style.display = "none";
@@ -114,11 +110,9 @@ const cancelInput = () => {
 const submitBook = () => {
   addToLibrary();
   listenForAddBtn();
-  clearLibrary();
   displayBooks(myLibrary);
-  const resetForm = document.querySelector("form").reset();
+  document.querySelector("form").reset();
   formContainer.style.display = "none";
 };
 
-listenForAddBtn();
 displayBooks(myLibrary);
