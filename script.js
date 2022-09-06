@@ -5,15 +5,27 @@ let myLibrary = [
     author: "Fyodor Dostoyevsky",
     pages: 671,
     uniqueID: crypto.randomUUID(),
+    read: false,
   },
 ];
 
 class Book {
-  constructor(title, author, pages, uniqueID) {
+  constructor(title, author, pages, uniqueID, read) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.uniqueID = uniqueID;
+    this.read = read;
+  }
+  readStatus() {
+    const readStatus = document.querySelector(`[data-id=${this.uniqueID}]`);
+    if (readStatus.checked === false) {
+      console.log("false");
+      this.read = false;
+    } else if (readStatus.checked === true) {
+      console.log("true");
+      this.read = true;
+    }
   }
 }
 
@@ -49,9 +61,17 @@ function displayBooks(library) {
     delBtn.setAttribute("id", `${myLibrary[i]["uniqueID"]}`);
     delBtn.textContent = "Delete";
     currentBook.appendChild(delBtn);
+
+    let readBtn = document.createElement("button");
+    readBtn.classList.add("readBtn");
+    readBtn.setAttribute("type", "button");
+    readBtn.setAttribute("data-id", `${myLibrary[i]["uniqueID"]}`);
+    readBtn.textContent = "Read";
+    currentBook.appendChild(readBtn);
   }
   listenForAddBtn();
   listenForDelBook();
+  listenForReadStatus();
 }
 
 function addToLibrary(book) {
@@ -85,6 +105,7 @@ function listenForDelBook() {
       const index = myLibrary.findIndex((book) => {
         return book.uniqueID === `${delBtn["id"]}`;
       });
+      console.log(index);
       myLibrary.splice(index, 1);
       displayBooks(myLibrary);
     })
@@ -116,3 +137,14 @@ const submitBook = () => {
 };
 
 displayBooks(myLibrary);
+
+function listenForReadStatus() {
+  document.querySelectorAll(".readBtn").forEach((button) =>
+    button.addEventListener("click", () => {
+      const index = myLibrary.findIndex((book) => {
+        return book.uniqueID === button.dataset.id;
+      });
+      console.log(index);
+    })
+  );
+}
