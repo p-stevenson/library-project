@@ -10,13 +10,10 @@ class Book {
     this.read = read;
   }
   readStatus() {
-    const readStatus = document.querySelector(`[data-id=${this.uniqueID}]`);
-    if (readStatus.checked === false) {
-      console.log("false");
-      this.read = false;
-    } else if (readStatus.checked === true) {
-      console.log("true");
+    if (this.read === false) {
       this.read = true;
+    } else if (this.read === true) {
+      this.read = false;
     }
   }
 }
