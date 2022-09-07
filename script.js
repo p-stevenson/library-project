@@ -29,18 +29,21 @@ function displayBooks(library) {
 
     const currentBook = document.querySelector(`[id=card00${i}]`);
     for (let key in library[i]) {
-      if (key === "uniqueID" || key === "read") {
-        continue;
-      }
       const bookInfo = document.createElement("p");
       bookInfo.classList.add("info");
       bookInfo.setAttribute("id", `${key}`);
-      currentBook.appendChild(bookInfo);
-      if (key === "pages") {
-        bookInfo.textContent = `Pages: ${library[i][key]}`;
-      } else {
-        bookInfo.textContent = library[i][key];
+      switch (key) {
+        case "uniqueID":
+        case "read":
+          continue;
+        case "pages":
+          bookInfo.textContent = `Pages: ${library[i][key]}`;
+          break;
+        default:
+          bookInfo.textContent = library[i][key];
+          break;
       }
+      currentBook.appendChild(bookInfo);
     }
 
     let delBtn = document.createElement("button");
