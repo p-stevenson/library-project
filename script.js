@@ -46,6 +46,7 @@ function displayBooks(library) {
       currentBook.appendChild(bookInfo);
     }
 
+    // TODO Create button class possibly with append method...
     let delBtn = document.createElement("button");
     delBtn.classList.add("delBtn");
     delBtn.setAttribute("type", "button");
