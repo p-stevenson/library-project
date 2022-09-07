@@ -72,7 +72,10 @@ function addToLibrary(book) {
   const author = document.querySelector("#author").value;
   const pages = Number(document.querySelector("#numOfPages").value);
   const uniqueID = crypto.randomUUID();
-  return myLibrary.push((book = new Book(title, author, pages, uniqueID)));
+  const read = false;
+  return myLibrary.push(
+    (book = new Book(title, author, pages, uniqueID, read))
+  );
 }
 
 const addBtn = document.querySelector("#addBook");
