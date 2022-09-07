@@ -22,12 +22,12 @@ function displayBooks(library) {
   let cardContainer = document.querySelector(".cardContainer");
 
   for (let i = 0; i < library.length; i++) {
-    let bookCard = document.createElement("div");
-    bookCard.classList.add("bookCard");
-    bookCard.setAttribute("id", `bookCard00${i}`);
-    cardContainer.appendChild(bookCard);
+    let card = document.createElement("div");
+    card.classList.add("bookWrapper");
+    card.setAttribute("id", `card00${i}`);
+    cardContainer.appendChild(card);
 
-    const currentBook = document.querySelector(`[id=bookCard00${i}]`);
+    const currentBook = document.querySelector(`[id=card00${i}]`);
     for (let key in library[i]) {
       if (key === "uniqueID" || key === "read") {
         continue;
@@ -58,8 +58,8 @@ function displayBooks(library) {
     currentBook.appendChild(readBtn);
 
     myLibrary[i]["read"] === true
-      ? (document.querySelector(`#bookCard00${i}`).style.borderColor = "green")
-      : (document.querySelector(`#bookCard00${i}`).style.borderColor = "red");
+      ? (document.querySelector(`#card00${i}`).style.borderColor = "green")
+      : (document.querySelector(`#card00${i}`).style.borderColor = "red");
   }
   listenForAddBtn();
   listenForDelBook();
@@ -108,7 +108,7 @@ function listenForDelBook() {
 }
 
 function clearDisplayedBooks() {
-  document.querySelectorAll(".bookCard").forEach((book) => {
+  document.querySelectorAll(".bookWrapper").forEach((book) => {
     book.remove();
   });
 }
