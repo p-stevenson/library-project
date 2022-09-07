@@ -17,7 +17,6 @@ class Book {
     }
   }
 }
-
 function displayBooks(library) {
   clearDisplayedBooks();
   let cardContainer = document.querySelector(".cardContainer");
@@ -25,10 +24,10 @@ function displayBooks(library) {
   for (let i = 0; i < library.length; i++) {
     let bookCard = document.createElement("div");
     bookCard.classList.add("bookCard");
-    bookCard.setAttribute("id", `bookCard0${i}`);
+    bookCard.setAttribute("id", `bookCard00${i}`);
     cardContainer.appendChild(bookCard);
 
-    const currentBook = document.querySelector(`[id=bookCard0${i}]`);
+    const currentBook = document.querySelector(`[id=bookCard00${i}]`);
     for (let key in library[i]) {
       if (key === "uniqueID" || key === "read") {
         continue;
@@ -140,7 +139,8 @@ function listenForReadStatus() {
       const index = myLibrary.findIndex((book) => {
         return book.uniqueID === button.dataset.id;
       });
-      console.log(index);
+      myLibrary[index].readStatus();
+      displayBooks(myLibrary);
     })
   );
 }
