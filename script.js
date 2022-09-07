@@ -49,7 +49,8 @@ function displayBooks(library) {
     let delBtn = document.createElement("button");
     delBtn.classList.add("delBtn");
     delBtn.setAttribute("type", "button");
-    delBtn.setAttribute("id", `${myLibrary[i]["uniqueID"]}`);
+    delBtn.setAttribute("id", `delBtn00${i}`);
+    delBtn.setAttribute("data-del-id", `${myLibrary[i]["uniqueID"]}`);
     delBtn.textContent = "Delete";
     currentBook.appendChild(delBtn);
 
