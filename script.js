@@ -1,13 +1,5 @@
 "use strict";
-let myLibrary = [
-  {
-    title: "Crime and Punishment",
-    author: "Fyodor Dostoyevsky",
-    pages: 671,
-    uniqueID: crypto.randomUUID(),
-    read: false,
-  },
-];
+let myLibrary = [];
 
 class Book {
   constructor(title, author, pages, uniqueID, read) {
