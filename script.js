@@ -141,7 +141,7 @@ function listenForReadStatus() {
   document.querySelectorAll(".readBtn").forEach((button) =>
     button.addEventListener("click", () => {
       const index = myLibrary.findIndex((book) => {
-        return book.uniqueID === button.dataset.id;
+        return book.uniqueID === button.dataset.readId;
       });
       myLibrary[index].readStatus();
       displayBooks(myLibrary);
