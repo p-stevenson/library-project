@@ -102,9 +102,8 @@ function listenForDelBook() {
   document.querySelectorAll(".delBtn").forEach((delBtn) =>
     delBtn.addEventListener("click", () => {
       const index = myLibrary.findIndex((book) => {
-        return book.uniqueID === `${delBtn["id"]}`;
+        return book.uniqueID === delBtn.dataset.delId;
       });
-      console.log(index);
       myLibrary.splice(index, 1);
       displayBooks(myLibrary);
     })
