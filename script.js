@@ -30,7 +30,7 @@ function displayBooks(library) {
 
     const currentBook = document.querySelector(`[id=bookCard0${i}]`);
     for (let key in library[i]) {
-      if (key === "uniqueID") {
+      if (key === "uniqueID" || key === "read") {
         continue;
       }
       const bookInfo = document.createElement("p");
