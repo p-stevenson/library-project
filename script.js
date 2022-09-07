@@ -57,7 +57,8 @@ function displayBooks(library) {
     let readBtn = document.createElement("button");
     readBtn.classList.add("readBtn");
     readBtn.setAttribute("type", "button");
-    readBtn.setAttribute("data-id", `${myLibrary[i]["uniqueID"]}`);
+    readBtn.setAttribute("id", `readBtn00${i}`);
+    readBtn.setAttribute("data-read-id", `${myLibrary[i]["uniqueID"]}`);
     readBtn.textContent = "Read";
     currentBook.appendChild(readBtn);
 
