@@ -57,6 +57,10 @@ function displayBooks(library) {
     readBtn.setAttribute("data-id", `${myLibrary[i]["uniqueID"]}`);
     readBtn.textContent = "Read";
     currentBook.appendChild(readBtn);
+
+    myLibrary[i]["read"] === true
+      ? (document.querySelector(`#bookCard00${i}`).style.borderColor = "green")
+      : (document.querySelector(`#bookCard00${i}`).style.borderColor = "red");
   }
   listenForAddBtn();
   listenForDelBook();
