@@ -22,6 +22,24 @@ body {
   max-width: 2560px;
   flex: 1 1 0;
 }
+
+.nav {
+  border: none;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto 1fr;
+  gap: 0 0.4rem;
+  align-items: center;
+  background-color: #f0f0f0;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  font-size: clamp(3rem, 2.601rem + 2.123vw, 6rem);
+  color: #c54a54;
+  max-height: clamp(5rem, 4.203rem + 4.247vw, 11rem);
+  border-bottom: clamp(0.125rem, 0.115rem + 0.053vw, 0.2rem) solid
+    rgba(0, 0, 0, 0.788);
+}
   border: none;
 }
 
