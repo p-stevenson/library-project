@@ -3,7 +3,7 @@
    viewBox="0 0 448 512"
    version="1.1"
    id="svg186"
-   sodipodi:docname="book-spells.svg"
+   sodipodi:docname="book-spells-color.svg"
    inkscape:version="1.2 (dc2aeda, 2022-05-15)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -22,10 +22,10 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="2.4199219"
-     inkscape:cx="224.18079"
+     inkscape:cx="223.97417"
      inkscape:cy="256"
-     inkscape:window-width="3440"
-     inkscape:window-height="1416"
+     inkscape:window-width="1708"
+     inkscape:window-height="1404"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -33,7 +33,7 @@
   <path
      d="M 448,384 V 16 C 448,7.2 440.8,0 432,0 H 80 C 35.8,0 0,35.8 0,80 v 352 c 0,44.2 35.8,80 80,80 h 352 c 8.8,0 16,-7.2 16,-16 v -16 c 0,-7.8 -5.6,-14.3 -12.9,-15.7 -4.2,-13 -4.2,-51.6 0,-64.6 7.4,-1.5 12.9,-7.9 12.9,-15.7 z m -54,80 H 80 c -17.7,0 -32,-14.3 -32,-32 0,-17.6 14.4,-32 32,-32 h 314 c -2.7,17.3 -2.7,46.7 0,64 z m 6,-112 H 80 c -11.4,0 -22.2,2.4 -32,6.7 V 80 C 48,62.3 62.3,48 80,48 h 320 z"
      id="path184"
-     style="fill:#b74956;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:2.002;stroke-dasharray:none;stroke-linecap:square;stroke-linejoin:bevel"
+     style="fill:#b74956;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:5.002;stroke-dasharray:none;stroke-linecap:square;stroke-linejoin:bevel"
      sodipodi:nodetypes="ssssssssssccscssscccscsscc" />
   <g
      inkscape:groupmode="layer"
@@ -41,7 +41,7 @@
      inkscape:label="stars">
     <path
        d="m 248.99192,263.93167 26.66,53.33 26.66,-53.33 53.34,-26.67 -53.34,-26.67 -26.66,-53.33 -26.66,53.33 -53.34,26.67 z m -85.34,-66.67 18.66,-37.33 37.34,-18.67 -37.34,-18.67 -18.66,-37.329996 -18.67,37.329996 -37.33,18.67 37.33,18.67 z"
-       style="fill:#f3b21b;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:2;stroke-dasharray:none"
+       style="fill:#f3b21b;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:5;stroke-dasharray:none"
        id="path960"
        sodipodi:nodetypes="cccccccccccccccccc" />
   </g>
