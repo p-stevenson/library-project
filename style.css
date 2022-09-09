@@ -18,6 +18,10 @@ body {
 }
 
 .wrapper {
+  background-color: white;
+  max-width: 2560px;
+  flex: 1 1 0;
+}
   border: none;
 }
 
