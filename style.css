@@ -49,7 +49,21 @@ body {
   height: clamp(3rem, 2.601rem + 2.123vw, 6rem);
   filter: drop-shadow(-2px 0px 1px rgb(117 117 117));
 }
-  border: none;
+
+.nav > #addBook {
+  height: clamp(
+    1.875rem,
+    1.5016592920353982rem + 1.991150442477876vw,
+    4.6875rem
+  );
+  cursor: pointer;
+  filter: drop-shadow(-1px 0px 1px rgb(65, 65, 65));
+  margin-top: 1rem;
+  margin-right: clamp(
+    1.5rem,
+    1.168141592920354rem + 1.7699115044247788vw,
+    4rem
+  );
 }
 
 .card {
