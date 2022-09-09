@@ -39,6 +39,8 @@ body {
   max-height: clamp(5rem, 4.203rem + 4.247vw, 11rem);
   border-bottom: clamp(0.125rem, 0.115rem + 0.053vw, 0.2rem) solid
     rgba(0, 0, 0, 0.788);
+  text-shadow: -2px 0px 1px rgb(117, 117, 117);
+  -webkit-text-stroke: 0.1rem rgb(0, 0, 0);
 }
 
 .nav > img {
