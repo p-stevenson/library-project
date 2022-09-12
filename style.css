@@ -85,6 +85,10 @@ form {
   position: absolute;
 }
 
+input:focus::placeholder {
+  color: transparent;
+}
+
 .cardContainer {
   border-color: pink;
   border: none;
