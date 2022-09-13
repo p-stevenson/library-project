@@ -30,7 +30,6 @@
           <h1>Book'd</h1>
           <input id="addBook" type="image" src="icons/plus-square-color-outline.svg" alt="image of a plus shape">
       </header>
-      <div class="formContainer">
         <form name="New Book Information" action="#" method="post">
           <label for="bookTitle"
             >Title
@@ -67,13 +66,17 @@
               id="numOfPages"
               pattern="\d"
           /></label>
+
+          <label for="notes">
+            Notes...
+            <input type="text" name ="notes" id="notes" rows="10" cols="30">
+          </label>
           <div class="btnContainer">
             <button type="button" id="cancel">Cancel</button>
             <button type="submit">submit</button>
           </div>
           <div class="test"></div>
         </form>
-      </div>
       <div class="cardContainer"></div>
     </div>
   </body>
