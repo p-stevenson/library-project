@@ -1,8 +1,12 @@
-* {
-  border: 2px solid black;
+:root {
   box-sizing: border-box;
   overflow: hidden;
+  --main-font: "Bebas Neue", sans-serif;
 }
+
+/* * {
+  border: 2px solid black;
+} */
 
 html,
 body,
