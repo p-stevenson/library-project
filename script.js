@@ -123,8 +123,8 @@ function displayForm() {
 }
 
 const cancelInput = () => {
-  listenForAddBtn();
   formContainer.style.display = "none";
+  listenForAddBtn();
 };
 
 const submitBook = () => {
