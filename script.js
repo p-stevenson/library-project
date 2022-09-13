@@ -83,7 +83,7 @@ function addToLibrary(book) {
 }
 
 const addBtn = document.querySelector("#addBook");
-const formContainer = document.querySelector(".formContainer");
+const formContainer = document.querySelector("form");
 const submitBtn = document.querySelector("#submit");
 const cancelBtn = document.querySelector("#cancel");
 
