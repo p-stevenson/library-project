@@ -1,5 +1,9 @@
 "use strict";
-let myLibrary = [];
+let myLibrary = [
+  { title: "some book", author: "some writer" },
+  { title: "another book", author: "another writer" },
+  { title: "the last book", author: "last writer" },
+];
 
 class Book {
   constructor(title, author, pages, uniqueID, read, notes) {
@@ -18,6 +22,7 @@ class Book {
     }
   }
 }
+
 function displayBooks(library) {
   clearDisplayedBooks();
   let cardContainer = document.querySelector(".cardContainer");
