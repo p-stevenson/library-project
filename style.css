@@ -75,7 +75,10 @@ main {
   border: none;
   display: grid;
 }
+
+.bookWrapper {
   border-color: chartreuse;
+  height: 400px;
 }
 
 .formContainer {
