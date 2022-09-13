@@ -90,11 +90,11 @@ form {
   display: none;
   flex-direction: column;
   width: 95%;
-  margin-top: 25%;
+  margin-top: 10%;
   justify-self: center;
   border: 5px solid grey;
   border-radius: 5px;
-  background-color: white;
+  background-color: #f0f0f0;
 }
 
 form > * {
