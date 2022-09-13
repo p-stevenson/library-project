@@ -1,9 +1,5 @@
 "use strict";
-let myLibrary = [
-  { title: "some book", author: "some writer" },
-  { title: "another book", author: "another writer" },
-  { title: "the last book", author: "last writer" },
-];
+let myLibrary = [];
 
 class Book {
   constructor(title, author, pages, uniqueID, read, notes) {
@@ -22,6 +18,39 @@ class Book {
     }
   }
 }
+
+let book1 = myLibrary.push(
+  new Book(
+    "some book",
+    "some writer",
+    275,
+    crypto.randomUUID(),
+    false,
+    "some test text"
+  )
+);
+
+let book2 = myLibrary.push(
+  new Book(
+    "another book",
+    "another writer",
+    380,
+    crypto.randomUUID(),
+    false,
+    "some test text"
+  )
+);
+
+let book3 = myLibrary.push(
+  new Book(
+    "the last book",
+    "last writer",
+    114,
+    crypto.randomUUID(),
+    false,
+    "some test text"
+  )
+);
 
 function displayBooks(library) {
   clearDisplayedBooks();
