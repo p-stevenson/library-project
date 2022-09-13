@@ -4,10 +4,6 @@
   --main-font: "Bebas Neue", sans-serif;
 }
 
-/* * {
-  border: 2px solid black;
-} */
-
 html,
 body,
 header,
@@ -76,16 +72,6 @@ h1 {
   );
 }
 
-main {
-  border: none;
-  display: grid;
-}
-
-.bookWrapper {
-  border-color: chartreuse;
-  height: 400px;
-}
-
 .formContainer {
   border-color: orangered;
 }
@@ -104,8 +90,22 @@ form {
   background-color: white;
 }
 
+form > * {
+  border: none;
+}
+
 input:focus::placeholder {
   color: transparent;
+}
+
+main {
+  border: none;
+  display: grid;
+}
+
+.bookWrapper {
+  border: 2px solid black;
+  height: 400px;
 }
 
 .cardContainer {
