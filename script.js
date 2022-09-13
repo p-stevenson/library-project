@@ -2,12 +2,13 @@
 let myLibrary = [];
 
 class Book {
-  constructor(title, author, pages, uniqueID, read) {
+  constructor(title, author, pages, uniqueID, read, notes) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.uniqueID = uniqueID;
     this.read = read;
+    this.notes = notes;
   }
   readStatus() {
     if (this.read === false) {
@@ -77,8 +78,9 @@ function addToLibrary(book) {
   const pages = Number(document.querySelector("#numOfPages").value);
   const uniqueID = crypto.randomUUID();
   const read = false;
+  const notes = document.querySelector("#notes").value;
   return myLibrary.push(
-    (book = new Book(title, author, pages, uniqueID, read))
+    (book = new Book(title, author, pages, uniqueID, read, notes))
   );
 }
 
