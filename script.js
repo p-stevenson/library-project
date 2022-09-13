@@ -155,11 +155,13 @@ function clearDisplayedBooks() {
 
 function displayForm() {
   formContainer.style.display = "flex";
+  document.querySelector(".formWrapper").style.display = "grid";
   listenForSubmit();
 }
 
 const cancelInput = () => {
   formContainer.style.display = "none";
+  document.querySelector(".formWrapper").style.display = "none";
   listenForAddBtn();
 };
 
@@ -169,6 +171,7 @@ const submitBook = () => {
   displayBooks(myLibrary);
   document.querySelector("form").reset();
   formContainer.style.display = "none";
+  document.querySelector(".formWrapper").style.display = "none";
 };
 
 displayBooks(myLibrary);
