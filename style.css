@@ -1,6 +1,7 @@
 * {
   border: 2px solid black;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 html,
@@ -104,6 +105,7 @@ input:focus::placeholder {
 }
 
 .cardContainer {
+  overflow: scroll;
   border-color: pink;
   border: none;
   display: grid;
