@@ -1,5 +1,5 @@
 * {
-  /* border: 2px solid black; */
+  border: 2px solid black;
   box-sizing: border-box;
 }
 
@@ -44,13 +44,18 @@ body {
 }
 
 .nav > #main-logo {
+  border: none;
   margin: 0.2rem 0 0 clamp(0.8rem, 0.693rem + 0.566vw, 1.6rem);
   height: 3rem;
   height: clamp(3rem, 2.601rem + 2.123vw, 6rem);
   filter: drop-shadow(-2px 0px 1px rgb(117 117 117));
 }
 
+h1 {
+  border: none;
+}
 .nav > #addBook {
+  border: none;
   height: clamp(
     1.875rem,
     1.5016592920353982rem + 1.991150442477876vw,
@@ -72,9 +77,6 @@ body {
 
 .formContainer {
   border-color: orangered;
-  border: none;
-  display: none;
-  float: inherit;
 }
 
 form {
