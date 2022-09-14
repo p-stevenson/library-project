@@ -85,23 +85,38 @@ h1 {
 }
 
 form {
-  float: inherit;
-  position: absolute;
-  z-index: 10;
   display: none;
   flex-direction: column;
-  width: 95%;
-  margin-top: 10%;
   justify-self: center;
+  position: absolute;
+  float: inherit;
+  width: 95%;
+  z-index: 10;
+  margin-top: 10%;
+  padding: 1rem;
   border: 2px solid rgb(58, 58, 58);
   border-radius: 5px;
   background-color: #ffffff;
   box-shadow: -2px 2px 5px rgb(117 117 117);
-  padding: 1rem;
 }
 
-form > * {
-  border: none;
+label {
+  display: block;
+  padding-bottom: 1rem;
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  color: rgb(71, 71, 71);
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.125rem 0.125rem 0.125rem 0.3rem;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.726);
+  border-radius: 3px;
 }
 
 input:focus::placeholder {
