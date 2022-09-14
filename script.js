@@ -107,12 +107,12 @@ function displayBooks(library) {
 }
 
 function addToLibrary(book) {
-  const title = document.querySelector("#bookTitle").value;
-  const author = document.querySelector("#author").value;
-  const pages = Number(document.querySelector("#numOfPages").value);
+  const title = document.querySelector("#titleInput").value;
+  const author = document.querySelector("#authorInput").value;
+  const pages = Number(document.querySelector("#pagesInput").value);
   const uniqueID = crypto.randomUUID();
   const read = false;
-  const notes = document.querySelector("#notes").value;
+  const notes = document.querySelector("#notesInput").value;
   return myLibrary.push(
     (book = new Book(title, author, pages, uniqueID, read, notes))
   );
