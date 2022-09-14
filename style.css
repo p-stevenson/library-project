@@ -123,14 +123,14 @@ input:focus::placeholder {
   color: transparent;
 }
 
-main {
-  border: none;
-  display: grid;
+input:focus {
+  border: 2px solid var(--inputHighlight-color);
 }
-
-.bookWrapper {
-  border: 2px solid black;
-  height: 400px;
+textarea:focus {
+  border: 2px solid var(--inputHighlight-color);
+}
+input:not(:focus):not(:placeholder-shown):invalid {
+  border: 2px solid rgba(255, 30, 0, 0.8);
 }
 
 .cardContainer {
