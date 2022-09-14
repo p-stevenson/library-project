@@ -145,4 +145,16 @@ input:not(:focus):not(:placeholder-shown):invalid {
 .btnContainer {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+}
+
+button {
+  font-family: "Oswald", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:active,
+input[type="image"]:active {
+  transform: translateY(2px);
 }
