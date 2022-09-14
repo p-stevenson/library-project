@@ -1,7 +1,8 @@
 :root {
   box-sizing: border-box;
   overflow: hidden;
-  --main-font: "Bebas Neue", sans-serif;
+  --main-color: #c54a54;
+  --inputHighlight-color: rgb(87, 180, 255);
 }
 
 html,
