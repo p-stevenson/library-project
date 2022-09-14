@@ -93,9 +93,11 @@ form {
   width: 95%;
   margin-top: 10%;
   justify-self: center;
-  border: 5px solid grey;
+  border: 2px solid rgb(58, 58, 58);
   border-radius: 5px;
-  background-color: #f0f0f0;
+  background-color: #ffffff;
+  box-shadow: -2px 2px 5px rgb(117 117 117);
+  padding: 1rem;
 }
 
 form > * {
