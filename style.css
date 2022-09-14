@@ -5,14 +5,6 @@
   --inputHighlight-color: rgb(87, 180, 255);
 }
 
-html,
-body,
-header,
-.wrapper {
-  border: none;
-  margin: 0;
-}
-
 body {
   background-color: lightgray;
   display: flex;
@@ -24,38 +16,35 @@ body {
   max-width: 2560px;
   flex: 1 1 0;
 }
+/* ---------- NAV ---------- */
 
 .nav {
-  border: none;
   display: grid;
   grid-template-columns: auto 1fr auto;
   grid-template-rows: auto 1fr;
   gap: 0 0.4rem;
   align-items: center;
-  background-color: #f0f0f0;
+  max-height: clamp(5rem, 4.203rem + 4.247vw, 11rem);
   font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 3rem;
   font-size: clamp(3rem, 2.601rem + 2.123vw, 6rem);
-  color: #c54a54;
-  max-height: clamp(5rem, 4.203rem + 4.247vw, 11rem);
+  color: var(--main-color);
+  text-shadow: -2px 0px 1px rgb(117, 117, 117);
   border-bottom: clamp(0.125rem, 0.115rem + 0.053vw, 0.2rem) solid
     rgba(0, 0, 0, 0.788);
-  text-shadow: -2px 0px 1px rgb(117, 117, 117);
   -webkit-text-stroke: 0.1rem rgb(0, 0, 0);
+  background-color: #f0f0f0;
 }
 
 .nav > #main-logo {
   border: none;
-  margin: 0.2rem 0 0 clamp(0.8rem, 0.693rem + 0.566vw, 1.6rem);
   height: 3rem;
   height: clamp(3rem, 2.601rem + 2.123vw, 6rem);
+  margin: 0.2rem 0 0 clamp(0.8rem, 0.693rem + 0.566vw, 1.6rem);
   filter: drop-shadow(-2px 0px 1px rgb(117 117 117));
 }
 
-h1 {
-  border: none;
-}
 .nav > #addBook {
   border: none;
   height: clamp(
@@ -63,25 +52,47 @@ h1 {
     1.5016592920353982rem + 1.991150442477876vw,
     4.6875rem
   );
-  cursor: pointer;
-  filter: drop-shadow(-1px 0px 1px rgb(65, 65, 65));
   margin-top: 1rem;
   margin-right: clamp(
     1.5rem,
     1.168141592920354rem + 1.7699115044247788vw,
     4rem
   );
+  filter: drop-shadow(-1px 0px 1px rgb(65, 65, 65));
+  cursor: pointer;
 }
+
+/* ---------- CARDS ---------- */
+
+main {
+  border: none;
+  display: grid;
+}
+
+.bookWrapper {
+  border: 2px solid black;
+  height: 400px;
+}
+
+.cardContainer {
+  overflow: scroll;
+  border-color: pink;
+  border: none;
+  display: grid;
+  height: 100vh;
+  gap: 1rem;
+}
+
+/* ---------- FORM ---------- */
 
 .formWrapper {
   display: none;
-  float: inherit;
   position: absolute;
-  border: none;
-  background-color: rgba(255, 255, 255, 0);
-  backdrop-filter: blur(3px);
+  float: inherit;
   height: 100vh;
   width: 100%;
+  background-color: rgba(221, 221, 221, 0.411);
+  backdrop-filter: blur(3px);
 }
 
 form {
@@ -133,14 +144,7 @@ input:not(:focus):not(:placeholder-shown):invalid {
   border: 2px solid rgba(255, 30, 0, 0.8);
 }
 
-.cardContainer {
-  overflow: scroll;
-  border-color: pink;
-  border: none;
-  display: grid;
-  height: 100vh;
-  gap: 1rem;
-}
+/* ---------- BUTTONS ---------- */
 
 .btnContainer {
   display: flex;
