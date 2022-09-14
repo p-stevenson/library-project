@@ -69,18 +69,19 @@ main {
   display: grid;
 }
 
-.bookWrapper {
-  border: 2px solid black;
-  height: 400px;
-}
-
 .cardContainer {
   overflow: scroll;
   border-color: pink;
   border: none;
   display: grid;
   height: 100vh;
-  gap: 1rem;
+}
+
+.bookWrapper {
+  border: 1px solid black;
+  border-radius: 5px;
+  height: 400px;
+  margin: 1rem;
 }
 
 /* ---------- FORM ---------- */
