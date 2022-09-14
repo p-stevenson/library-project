@@ -33,45 +33,43 @@
       <main>
         <div class="formWrapper">
           <form name="New Book Information" action="#" method="post">
-            <label for="bookTitle"
-              >Title
+            <label for="titleInput"
+              >TITLE
               <input
                 type="text"
-                name="bookTitle"
-                id="bookTitle"
-                pattern="[a-zA-Z]{1,}"
+                name="titleInput"
+                id="titleInput"
                 title="Book Title...(required)"
-                placeholder="required"
+                placeholder="*required"
                 required
             /></label>
           <!-- TODO Form Styling
             Add element for book info
             Check Wes Bos for dynamically adding images -->
-            <label for="author"
-              >Author
+            <label for="authorInput"
+              >AUTHOR
               <input
                 type="text"
-                name="author"
-                id="author"
-                pattern="^[a-zA-Z][a-zA-Z\s]{0,20}[a-zA-Z]$"
+                name="authorInput"
+                id="authorInput"
                 title="Author"
-                placeholder="required"
+                placeholder="*required"
                 required
             /></label>
-            <label for="numOfPages"
-              >Number of Pages
+            <label for="pagesInput"
+              >NUMBER OF PAGES
               <input
                 type="number"
                 inputmode="number"
-                name="numOfPages"
-                id="numOfPages"
+                name="pagesInput"
+                id="pagesInput"
                 pattern="\d"
             /></label>
-            <label for="notes">
-              Notes...
+            <label for="notesInput">
+              NOTES...
               <textarea
-              name ="notes"
-              id="notes"
+              name ="notesInput"
+              id="notesInput"
               rows="10"
               cols="30">
               </textarea>
