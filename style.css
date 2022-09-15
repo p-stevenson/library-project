@@ -89,6 +89,11 @@ main {
   color: rgb(84, 88, 92);
   font-size: 32px;
 }
+
+.imgContainer {
+  border: 5px dashed black;
+  height: 250px;
+  width: 250px;
 }
 
 /* ---------- FORM ---------- */
