@@ -63,6 +63,14 @@ function displayBooks(library) {
     cardContainer.appendChild(card);
 
     const currentBook = document.querySelector(`[id=card00${i}]`);
+
+    let imageContainer = document.createElement("div");
+    imageContainer.classList.add("imgContainer");
+    imageContainer.style.backgroundColor = `#${Math.floor(
+      Math.random() * 16777215
+    ).toString(16)}`;
+    currentBook.appendChild(imageContainer);
+
     for (let key in library[i]) {
       const bookInfo = document.createElement("p");
       bookInfo.classList.add("info");
