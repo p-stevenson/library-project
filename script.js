@@ -80,6 +80,9 @@ function displayBooks(library) {
       }
       currentBook.appendChild(bookInfo);
     }
+    let buttonContainer = document.createElement("div");
+    buttonContainer.classList.add("cardButttons");
+    currentBook.appendChild(buttonContainer);
 
     let delBtn = document.createElement("button");
     delBtn.classList.add("delBtn");
@@ -87,7 +90,7 @@ function displayBooks(library) {
     delBtn.setAttribute("id", `delBtn00${i}`);
     delBtn.setAttribute("data-del-id", `${myLibrary[i]["uniqueID"]}`);
     delBtn.textContent = "Delete";
-    currentBook.appendChild(delBtn);
+    buttonContainer.appendChild(delBtn);
 
     let readBtn = document.createElement("button");
     readBtn.classList.add("readBtn");
@@ -95,7 +98,7 @@ function displayBooks(library) {
     readBtn.setAttribute("id", `readBtn00${i}`);
     readBtn.setAttribute("data-read-id", `${myLibrary[i]["uniqueID"]}`);
     readBtn.textContent = "Read";
-    currentBook.appendChild(readBtn);
+    buttonContainer.appendChild(readBtn);
 
     myLibrary[i]["read"] === true
       ? (document.querySelector(`#card00${i}`).style.borderColor = "green")
