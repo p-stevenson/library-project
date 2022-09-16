@@ -1,6 +1,5 @@
 :root {
   box-sizing: border-box;
-  overflow: hidden;
   --main-color: #c54a54;
   --main-font-family: "Oswald", sans-serif;
   --main-background: rgb(200, 200, 200);
@@ -8,18 +7,18 @@
 }
 
 body {
-  background-color: lightgray;
+  background-color: rgb(204, 204, 204);
   display: flex;
   justify-content: center;
 }
 
 .wrapper {
-  background-color: white;
+  background-color: var(--main-background);
   max-width: 2560px;
   flex: 1 1 0;
 }
-/* ---------- NAV ---------- */
 
+/* ---------- NAV ---------- */
 .nav {
   position: fixed;
   width: 100%;
@@ -63,7 +62,6 @@ body {
 }
 
 /* ---------- CARDS ---------- */
-
 .cardContainer {
   margin-top: clamp(5rem, 4.203rem + 4.247vw, 11rem);
   background-color: var(--main-background);
@@ -104,7 +102,6 @@ body {
 }
 
 /* ---------- FORM ---------- */
-
 .formWrapper {
   display: none;
   position: absolute;
@@ -122,6 +119,7 @@ form {
   position: absolute;
   float: inherit;
   width: 95%;
+  max-width: 600px;
   z-index: 10;
   margin-top: 10%;
   padding: 1rem;
@@ -134,7 +132,7 @@ form {
 label {
   display: block;
   padding-bottom: 1rem;
-  font-family: "Oswald", sans-serif;
+  font-family: var(--main-font-family);
   font-size: 1rem;
   color: rgb(71, 71, 71);
 }
@@ -144,7 +142,7 @@ textarea {
   display: block;
   width: 100%;
   padding: 0.125rem 0.125rem 0.125rem 0.3rem;
-  font-family: "Oswald", sans-serif;
+  font-family: var(--main-font-family);
   font-size: 16px;
   border: 1px solid rgba(0, 0, 0, 0.726);
   border-radius: 3px;
@@ -175,7 +173,6 @@ input:not(:focus):not(:placeholder-shown):invalid {
 }
 
 /* ---------- BUTTONS ---------- */
-
 .btnContainer {
   display: flex;
   flex-direction: row;
@@ -183,7 +180,7 @@ input:not(:focus):not(:placeholder-shown):invalid {
 }
 
 button {
-  font-family: "Oswald", sans-serif;
+  font-family: var(--main-font-family);
   font-size: 1rem;
   cursor: pointer;
   text-shadow: -2px 0px 1px rgba(117, 117, 117, 0.171);
