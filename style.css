@@ -2,6 +2,8 @@
   box-sizing: border-box;
   overflow: hidden;
   --main-color: #c54a54;
+  --main-font-family: "Oswald", sans-serif;
+  --main-background: rgb(200, 200, 200);
   --inputHighlight-color: rgb(87, 180, 255);
 }
 
