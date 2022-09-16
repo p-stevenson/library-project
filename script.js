@@ -28,7 +28,7 @@ let book1 = myLibrary.push(
     false,
     `A pilot stranded in the desert awakes one morning to see, standing before him, the most extraordinary little fellow. "Please," asks the stranger, "draw me a sheep." And the pilot realizes that when life's events are too difficult to understand, there is no choice but to succumb to their mysteries. He pulls out pencil and paper... And thus begins this wise and enchanting fable that, in teaching the secret of what is really important in life, has changed forever the world for its readers.
     
-    Few stories are as widely read and as universally cherished by children and adults alike as The Little Prince, presented here in a stunning new translation with carefully restored artwork. The definitive edition of a worldwide classic, it will capture the hearts of readers of all ages.`
+Few stories are as widely read and as universally cherished by children and adults alike as The Little Prince, presented here in a stunning new translation with carefully restored artwork. The definitive edition of a worldwide classic, it will capture the hearts of readers of all ages.`
   )
 );
 
@@ -45,100 +45,68 @@ let book2 = myLibrary.push(
 
 let book4 = myLibrary.push(
   new Book(
-    "the last book",
-    "last writer",
-    114,
+    "High Fidelity",
+    "Nick Hornby",
+    340,
     crypto.randomUUID(),
     false,
-    "some test text"
+    "Rob does. He keeps a list, in fact. But Laura isn't on it - even though she's just become his latest ex. He's got his life back, you see. He can just do what he wants when he wants: like listen to whatever music he likes, look up the girls that are on his list, and generally behaves as if Laura never mattered. But Rob finds he can't move on. He's stuck in a really deep groove - and it's called Laura. Soon, Rob's asking himself some big questions: about love, about life - and about why we choose to share ours with the people we do."
   )
 );
 
 let book5 = myLibrary.push(
   new Book(
-    "the last book",
-    "last writer",
-    114,
+    "The Ocean at the End of the Lane",
+    "Neil Gaiman",
+    181,
     crypto.randomUUID(),
     false,
-    "some test text"
+    `"Sussex, England. A middle-aged man returns to his childhood home to attend a funeral. Although the house he lived in is long gone, he is drawn to the farm at the end of the road, where, when he was seven, he encountered a most remarkable girl, Lettie Hempstock, and her mother and grandmother. He hasn't thought of Lettie in decades, and yet as he sits by the pond (a pond that she'd claimed was an ocean) behind the ramshackle old farmhouse, the unremembered past comes flooding back. And it is a past too strange, too frightening, too dangerous to have happened to anyone, let alone a small boy.
+
+Forty years earlier, a man committed suicide in a stolen car at this farm at the end of the road. Like a fuse on a firework, his death lit a touchpaper and resonated in unimaginable ways. The darkness was unleashed, something scary and thoroughly incomprehensible to a little boy. And Lettie—magical, comforting, wise beyond her years—promised to protect him, no matter what.
+    
+A groundbreaking work from a master, The Ocean at the End of the Lane is told with a rare understanding of all that makes us human, and shows the power of stories to reveal and shelter us from the darkness inside and out. It is a stirring, terrifying, and elegiac fable as delicate as a butterfly's wing and as menacing as a knife in the dark."`
   )
 );
 
 let book6 = myLibrary.push(
   new Book(
-    "the last book",
-    "last writer",
-    114,
+    "The Martian",
+    "Andy Weir",
+    384,
     crypto.randomUUID(),
     false,
-    "some test text"
+    `"Six days ago, astronaut Mark Watney became one of the first people to walk on Mars.
+
+Now, he’s sure he’ll be the first person to die there.
+    
+After a dust storm nearly kills him and forces his crew to evacuate while thinking him dead, Mark finds himself stranded and completely alone with no way to even signal Earth that he’s alive—and even if he could get word out, his supplies would be gone long before a rescue could arrive.
+    
+Chances are, though, he won’t have time to starve to death. The damaged machinery, unforgiving environment, or plain-old “human error” are much more likely to kill him first.
+    
+But Mark isn’t ready to give up yet. Drawing on his ingenuity, his engineering skills — and a relentless, dogged refusal to quit — he steadfastly confronts one seemingly insurmountable obstacle after the next. Will his resourcefulness be enough to overcome the impossible odds against him?"`
   )
 );
 
 let book7 = myLibrary.push(
   new Book(
-    "the last book",
-    "last writer",
-    114,
+    "Crime and Punishment",
+    "Fyodor Dostoevsky",
+    671,
     crypto.randomUUID(),
     false,
-    "some test text"
+    `Raskolnikov, a destitute and desperate former student, wanders through the slums of St Petersburg and commits a random murder without remorse or regret. He imagines himself to be a great man, a Napoleon: acting for a higher purpose beyond conventional moral law. But as he embarks on a dangerous game of cat and mouse with a suspicious police investigator, Raskolnikov is pursued by the growing voice of his conscience and finds the noose of his own guilt tightening around his neck. Only Sonya, a downtrodden sex worker, can offer the chance of redemption.`
   )
 );
 
 let book8 = myLibrary.push(
   new Book(
-    "the last book",
-    "last writer",
-    114,
+    "The Doors of Perception",
+    "Aldous Huxley",
+    187,
     crypto.randomUUID(),
     false,
-    "some test text"
-  )
-);
-
-let book9 = myLibrary.push(
-  new Book(
-    "the last book",
-    "last writer",
-    114,
-    crypto.randomUUID(),
-    false,
-    "some test text"
-  )
-);
-
-let book10 = myLibrary.push(
-  new Book(
-    "the last book",
-    "last writer",
-    114,
-    crypto.randomUUID(),
-    false,
-    "some test text"
-  )
-);
-
-let book11 = myLibrary.push(
-  new Book(
-    "the last book",
-    "last writer",
-    114,
-    crypto.randomUUID(),
-    false,
-    "some test text"
-  )
-);
-
-let book12 = myLibrary.push(
-  new Book(
-    "the last book",
-    "last writer",
-    114,
-    crypto.randomUUID(),
-    false,
-    "some test text"
+    `As only he can, Aldous Huxley explores the mind's remote frontiers and the unmapped areas of human consciousness. These two astounding essays are among the most profound studies of the effects of mind-expanding drugs written in this century. Contains the complete texts of The Doors of Perception and Heaven and Hell , both of which became essential for the counterculture during the 1960s and influenced a generation's perception of life.`
   )
 );
 
@@ -177,28 +145,29 @@ function displayBooks(library) {
       currentBook.appendChild(bookInfo);
     }
     let buttonContainer = document.createElement("div");
-    buttonContainer.classList.add("cardButttons");
+    buttonContainer.classList.add("cardButtons");
     currentBook.appendChild(buttonContainer);
 
-    let delBtn = document.createElement("button");
+    let delBtn = document.createElement("input");
     delBtn.classList.add("delBtn");
-    delBtn.setAttribute("type", "button");
+    delBtn.setAttribute("type", "image");
     delBtn.setAttribute("id", `delBtn00${i}`);
     delBtn.setAttribute("data-del-id", `${myLibrary[i]["uniqueID"]}`);
-    delBtn.textContent = "Delete";
+    delBtn.setAttribute("src", "icons/trash-alt-grey.svg");
     buttonContainer.appendChild(delBtn);
 
-    let readBtn = document.createElement("button");
+    let readBtn = document.createElement("input");
     readBtn.classList.add("readBtn");
-    readBtn.setAttribute("type", "button");
+    readBtn.setAttribute("type", "image");
     readBtn.setAttribute("id", `readBtn00${i}`);
     readBtn.setAttribute("data-read-id", `${myLibrary[i]["uniqueID"]}`);
-    readBtn.textContent = "Read";
+    readBtn.setAttribute("src", "icons/check-circle-unread.svg");
     buttonContainer.appendChild(readBtn);
 
     myLibrary[i]["read"] === true
-      ? (document.querySelector(`#card00${i}`).style.borderColor = "green")
-      : (document.querySelector(`#card00${i}`).style.borderColor = "black");
+      ? (document.querySelector(`#readBtn00${i}`).style.filter =
+          "invert(63%) sepia(72%) saturate(4899%) hue-rotate(173deg) brightness(100%) contrast(110%)")
+      : false;
   }
   listenForAddBtn();
   listenForDelBook();
