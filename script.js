@@ -21,27 +21,117 @@ class Book {
 
 let book1 = myLibrary.push(
   new Book(
-    "some book",
-    "some writer",
-    275,
+    "The Little Prince",
+    "Antoine de Saint-Exupery",
+    96,
     crypto.randomUUID(),
     false,
-    "some test text"
+    `A pilot stranded in the desert awakes one morning to see, standing before him, the most extraordinary little fellow. "Please," asks the stranger, "draw me a sheep." And the pilot realizes that when life's events are too difficult to understand, there is no choice but to succumb to their mysteries. He pulls out pencil and paper... And thus begins this wise and enchanting fable that, in teaching the secret of what is really important in life, has changed forever the world for its readers.
+    
+    Few stories are as widely read and as universally cherished by children and adults alike as The Little Prince, presented here in a stunning new translation with carefully restored artwork. The definitive edition of a worldwide classic, it will capture the hearts of readers of all ages.`
   )
 );
 
 let book2 = myLibrary.push(
   new Book(
-    "another book",
-    "another writer",
-    380,
+    "Memoirs of a Geisha",
+    "Arthur Golden",
+    503,
+    crypto.randomUUID(),
+    false,
+    `A literary sensation and runaway bestseller, this brilliant novel presents with seamless authenticity and exquisite lyricism the true confessions of one of Japan's most celebrated geisha.\n \nIn "Memoirs of a Geisha," we enter a world where appearances are paramount; where a girl's virginity is auctioned to the highest bidder; where women are trained to beguile the most powerful men; and where love is scorned as illusion. It is a unique and triumphant work of fiction - at once romantic, erotic, suspenseful - and completely unforgettable.`
+  )
+);
+
+let book4 = myLibrary.push(
+  new Book(
+    "the last book",
+    "last writer",
+    114,
     crypto.randomUUID(),
     false,
     "some test text"
   )
 );
 
-let book3 = myLibrary.push(
+let book5 = myLibrary.push(
+  new Book(
+    "the last book",
+    "last writer",
+    114,
+    crypto.randomUUID(),
+    false,
+    "some test text"
+  )
+);
+
+let book6 = myLibrary.push(
+  new Book(
+    "the last book",
+    "last writer",
+    114,
+    crypto.randomUUID(),
+    false,
+    "some test text"
+  )
+);
+
+let book7 = myLibrary.push(
+  new Book(
+    "the last book",
+    "last writer",
+    114,
+    crypto.randomUUID(),
+    false,
+    "some test text"
+  )
+);
+
+let book8 = myLibrary.push(
+  new Book(
+    "the last book",
+    "last writer",
+    114,
+    crypto.randomUUID(),
+    false,
+    "some test text"
+  )
+);
+
+let book9 = myLibrary.push(
+  new Book(
+    "the last book",
+    "last writer",
+    114,
+    crypto.randomUUID(),
+    false,
+    "some test text"
+  )
+);
+
+let book10 = myLibrary.push(
+  new Book(
+    "the last book",
+    "last writer",
+    114,
+    crypto.randomUUID(),
+    false,
+    "some test text"
+  )
+);
+
+let book11 = myLibrary.push(
+  new Book(
+    "the last book",
+    "last writer",
+    114,
+    crypto.randomUUID(),
+    false,
+    "some test text"
+  )
+);
+
+let book12 = myLibrary.push(
   new Book(
     "the last book",
     "last writer",
@@ -61,9 +151,7 @@ function displayBooks(library) {
     card.classList.add("bookWrapper");
     card.setAttribute("id", `card00${i}`);
     cardContainer.appendChild(card);
-
     const currentBook = document.querySelector(`[id=card00${i}]`);
-
     let imageContainer = document.createElement("div");
     imageContainer.classList.add("imgContainer");
     imageContainer.style.backgroundColor = `#${Math.floor(
