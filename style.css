@@ -41,12 +41,8 @@ body {
   background-color: #f0f0f0;
 }
 
-.nav > #main-logo {
-  border: none;
-  height: 3rem;
-  height: clamp(3rem, 2.601rem + 2.123vw, 6rem);
-  margin: 0.2rem 0 0 clamp(0.8rem, 0.693rem + 0.566vw, 1.6rem);
-  filter: drop-shadow(-2px 0px 1px rgb(117 117 117));
+.nav > h1 {
+  margin-left: clamp(0.8rem, 0.693rem + 0.566vw, 1.6rem);
 }
 
 .nav > #addBook {
