@@ -110,8 +110,7 @@ function displayBooks(library) {
 
     myLibrary[i]["read"] === true
       ? (document.querySelector(`#card00${i}`).style.borderColor = "green")
-      : (document.querySelector(`#card00${i}`).style.borderColor =
-          "var(--main-color)");
+      : (document.querySelector(`#card00${i}`).style.borderColor = "black");
   }
   listenForAddBtn();
   listenForDelBook();
