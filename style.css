@@ -21,13 +21,15 @@ body {
 /* ---------- NAV ---------- */
 
 .nav {
+  position: fixed;
+  width: 100%;
+  max-width: 2560px;
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr auto;
   gap: 0 0.4rem;
   align-items: center;
   max-height: clamp(5rem, 4.203rem + 4.247vw, 11rem);
-  font-family: "Oswald", sans-serif;
+  font-family: var(--main-font-family);
   font-weight: 700;
   font-size: 3rem;
   font-size: clamp(3rem, 2.601rem + 2.123vw, 6rem);
