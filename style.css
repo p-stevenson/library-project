@@ -64,17 +64,15 @@ body {
 
 /* ---------- CARDS ---------- */
 
-main {
-  border: none;
-  display: grid;
-}
-
 .cardContainer {
-  overflow: scroll;
-  border-color: pink;
-  border: none;
+  margin-top: clamp(5rem, 4.203rem + 4.247vw, 11rem);
+  background-color: var(--main-background);
   display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(3, 1fr);
   height: 100vh;
+  margin: clamp(5rem, 4.203rem + 4.247vw, 11rem) 5rem auto 5rem;
 }
 
 .bookWrapper {
