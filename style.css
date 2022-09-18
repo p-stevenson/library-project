@@ -3,6 +3,11 @@
   --main-color: #c54a54;
   --main-background: rgb(200, 200, 200);
   --inputHighlight-color: rgb(87, 180, 255);
+  --form-padding: clamp(
+    1rem,
+    -0.027027027027027195rem + 5.405405405405405vw,
+    2rem
+  );
   --main-font-family: "Oswald", sans-serif;
 }
 
@@ -14,18 +19,19 @@ body {
 
 .wrapper {
   background-color: var(--main-background);
+  min-width: 300px;
+  width: 100%;
   max-width: 2560px;
-  flex: 1 1 0;
 }
 
 /* ---------- NAV ---------- */
-.nav {
+header {
   position: fixed;
   display: grid;
   gap: 0 0.4rem;
   grid-template-columns: 1fr auto;
   align-items: center;
-  width: 100%;
+  width: 100vw;
   max-height: clamp(5rem, 4.203rem + 4.247vw, 11rem);
   max-width: 2560px;
   font-family: var(--main-font-family);
@@ -40,11 +46,12 @@ body {
     rgba(0, 0, 0, 0.788);
 }
 
-.nav > h1 {
-  margin-left: clamp(0.8rem, 0.693rem + 0.566vw, 1.6rem);
+header > h1 {
+  padding-left: clamp(0rem, -1rem + 5vw, 5rem);
+  margin-left: 19px;
 }
 
-.nav > #addBook {
+header > #addBook {
   border: none;
   height: clamp(
     1.875rem,
@@ -52,32 +59,43 @@ body {
     4.6875rem
   );
   margin-top: 1rem;
-  margin-right: clamp(
-    1.5rem,
-    1.168141592920354rem + 1.7699115044247788vw,
-    4rem
+  padding-right: clamp(
+    1rem,
+    0.29999999999999993rem + 3.5000000000000004vw,
+    5.9rem
   );
   filter: drop-shadow(-1px 0px 1px rgb(65, 65, 65));
   cursor: pointer;
 }
 
 /* ---------- CARDS ---------- */
+
+main {
+  margin-top: clamp(4.6rem, 3.957142857142857rem + 3.214285714285714vw, 9.1rem);
+}
+
 .cardContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-template-rows: repeat(3, 1fr);
   gap: 25px;
   height: 100vh;
-  margin: clamp(5rem, 4.203rem + 4.247vw, 11rem) 5rem auto 5rem;
+  padding-top: clamp(
+    1rem,
+    0.6285714285714286rem + 1.8571428571428572vw,
+    3.6rem
+  );
   background-color: var(--main-background);
+  padding-left: clamp(0rem, -1rem + 5vw, 5rem);
+  padding-right: clamp(0rem, -1rem + 5vw, 5rem);
 }
 
 .bookWrapper {
   display: flex;
   flex-direction: column;
   justify-self: center;
-  height: 500px;
-  width: 300px;
+  height: 550px;
+  max-width: 400px;
   margin: 1rem;
   border: 3px solid black;
   border-radius: 8px;
@@ -117,8 +135,10 @@ body {
 }
 
 .bookWrapper > #notes {
+  height: 100%;
   overflow: scroll;
   padding-top: 0.5rem;
+  padding-right: 0.5rem;
   font-size: 0.8rem;
   white-space: pre-wrap;
 }
@@ -126,25 +146,25 @@ body {
 /* ---------- FORM ---------- */
 .formWrapper {
   display: none;
-  position: absolute;
-  float: inherit;
+  position: fixed;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
+  max-width: 2560px;
   background-color: rgba(221, 221, 221, 0.411);
   backdrop-filter: blur(3px);
 }
 
 form {
   display: none;
+  position: fixed;
   flex-direction: column;
   justify-self: center;
-  position: absolute;
-  float: inherit;
+  align-self: top;
   width: 95%;
   max-width: 600px;
-  z-index: 10;
+  z-index: 2;
   margin-top: 10%;
-  padding: 1rem;
+  padding: var(--form-padding) var(--form-padding) 1rem var(--form-padding);
   border: 2px solid rgb(58, 58, 58);
   border-radius: 5px;
   background-color: #ffffff;
@@ -216,11 +236,9 @@ input[type="image"]:active {
 }
 
 .cardButtons {
-  /* border: 1px solid red; */
   display: grid;
   grid-template-columns: 1fr auto;
   background-color: none;
-  /* height: 40px; */
 }
 
 .delBtn,
