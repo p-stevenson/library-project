@@ -165,8 +165,7 @@ function displayBooks(library) {
     buttonContainer.appendChild(readBtn);
 
     myLibrary[i]["read"] === true
-      ? (document.querySelector(`#readBtn00${i}`).style.filter =
-          "invert(63%) sepia(72%) saturate(4899%) hue-rotate(173deg) brightness(100%) contrast(110%)")
+      ? readBtn.setAttribute("src", "icons/check-circle-read.svg")
       : false;
   }
   listenForAddBtn();
