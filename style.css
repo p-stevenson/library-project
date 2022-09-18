@@ -1,4 +1,5 @@
 :root {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   --main-color: #c54a54;
   --main-background: rgb(200, 200, 200);
@@ -12,7 +13,11 @@
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   background-color: rgb(204, 204, 204);
 }
@@ -27,9 +32,13 @@ body {
 /* ---------- NAV ---------- */
 header {
   position: fixed;
+  display: -ms-grid;
   display: grid;
   gap: 0 0.4rem;
+  -ms-grid-columns: 1fr 0.4rem auto;
   grid-template-columns: 1fr auto;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   width: 100vw;
   max-height: clamp(5rem, 4.203rem + 4.247vw, 11rem);
@@ -64,6 +73,7 @@ header > #addBook {
     0.29999999999999993rem + 3.5000000000000004vw,
     5.9rem
   );
+  -webkit-filter: drop-shadow(-1px 0px 1px rgb(65, 65, 65));
   filter: drop-shadow(-1px 0px 1px rgb(65, 65, 65));
   cursor: pointer;
 }
@@ -75,8 +85,10 @@ main {
 }
 
 .cardContainer {
+  display: -ms-grid;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  -ms-grid-rows: 1fr 25px 1fr 25px 1fr;
   grid-template-rows: repeat(3, 1fr);
   gap: 25px;
   height: 100vh;
@@ -91,8 +103,14 @@ main {
 }
 
 .bookWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -ms-grid-column-align: center;
   justify-self: center;
   height: 550px;
   max-width: 400px;
@@ -103,6 +121,7 @@ main {
   font-size: 32px;
   color: rgb(84, 88, 92);
   background-color: white;
+  -webkit-box-shadow: -2px 2px 5px rgb(117 117 117);
   box-shadow: -2px 2px 5px rgb(117 117 117);
 }
 
@@ -151,14 +170,21 @@ main {
   width: 100vw;
   max-width: 2560px;
   background-color: rgba(221, 221, 221, 0.411);
+  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
 }
 
 form {
   display: none;
   position: fixed;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -ms-grid-column-align: center;
   justify-self: center;
+  -ms-flex-item-align: top;
+  -ms-grid-row-align: top;
   align-self: top;
   width: 95%;
   max-width: 600px;
@@ -168,6 +194,7 @@ form {
   border: 2px solid rgb(58, 58, 58);
   border-radius: 5px;
   background-color: #ffffff;
+  -webkit-box-shadow: -2px 2px 5px rgb(117 117 117);
   box-shadow: -2px 2px 5px rgb(117 117 117);
 }
 
@@ -200,6 +227,22 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+
 input:focus::placeholder {
   color: transparent;
 }
@@ -212,14 +255,27 @@ input:focus::placeholder {
 textarea:focus {
   border: 2px solid var(--inputHighlight-color);
 }
+input:not(:focus):not(:-moz-placeholder-shown):invalid {
+  border: 2px solid rgba(255, 30, 0, 0.8);
+}
+input:not(:focus):not(:-ms-input-placeholder):invalid {
+  border: 2px solid rgba(255, 30, 0, 0.8);
+}
 input:not(:focus):not(:placeholder-shown):invalid {
   border: 2px solid rgba(255, 30, 0, 0.8);
 }
 
 /* ---------- BUTTONS ---------- */
 .btnContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
 }
 
@@ -232,11 +288,15 @@ button {
 
 button:active,
 input[type="image"]:active {
+  -webkit-transform: translateY(2px);
+  -ms-transform: translateY(2px);
   transform: translateY(2px);
 }
 
 .cardButtons {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr auto;
   grid-template-columns: 1fr auto;
   background-color: none;
 }
